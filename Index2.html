@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boys Adventure Trip 2026 - Vote Now!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --anthropic-orange: #E97451;
+            --anthropic-cream: #F5F3EE;
+            --anthropic-dark: #1A1A1A;
+            --anthropic-gray: #6B6B6B;
+            --anthropic-light: #FEFDFB;
+            --airbnb-red: #FF385C;
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--anthropic-light);
+            color: var(--anthropic-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 32px 0;
+            border-bottom: 1px solid #EBEBEB;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-accent {
+            color: var(--anthropic-orange);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            letter-spacing: -1.5px;
+            margin: 48px 0 16px 0;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--anthropic-gray);
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        /* Trip Details Card */
+        .trip-details {
+            background: var(--anthropic-cream);
+            padding: 24px 32px;
+            border-radius: var(--border-radius);
+            margin: 32px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .detail-icon {
+            font-size: 24px;
+        }
+
+        .detail-content strong {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--anthropic-gray);
+            font-weight: 600;
+        }
+
+        .detail-content span {
+            font-size: 16px;
+            color: var(--anthropic-dark);
+            font-weight: 500;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin: 48px 0 32px 0;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .tabs::-webkit-scrollbar-thumb {
+            background: #DDDDDD;
+            border-radius: 2px;
+        }
+
+        .tab-button {
+            background: white;
+            border: 1.5px solid #DDDDDD;
+            padding: 12px 24px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            color: var(--anthropic-dark);
+            white-space: nowrap;
+        }
+
+        .tab-button:hover {
+            border-color: var(--anthropic-dark);
+            background: white;
+        }
+
+        .tab-button.active {
+            background: var(--anthropic-dark);
+            color: white;
+            border-color: var(--anthropic-dark);
+        }
+
+        /* Destination Cards */
+        .destination-card {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .destination-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Image */
+        .destination-hero {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .destination-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--anthropic-dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Destination Header */
+        .destination-header {
+            margin-bottom: 32px;
+        }
+
+        .destination-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .destination-subtitle {
+            font-size: 18px;
+            color: var(--anthropic-gray);
+            margin-bottom: 24px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            gap: 32px;
+            padding: 24px 0;
+            border-top: 1px solid #EBEBEB;
+            border-bottom: 1px solid #EBEBEB;
+            margin-bottom: 32px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--anthropic-gray);
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+        }
+
+        /* Section Styling */
+        .section {
+            margin: 48px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Activities Grid - Airbnb Style */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .activity-card {
+            background: white;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .activity-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .activity-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .activity-card p {
+            font-size: 15px;
+            color: var(--anthropic-gray);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .activity-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+        }
+
+        /* Pros/Cons - Clean Layout */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .pros-cons-card {
+            background: white;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 32px;
+        }
+
+        .pros-cons-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pros-cons-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pros-cons-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .pros li::before {
+            content: "✓";
+            color: #00A699;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .cons li::before {
+            content: "✕";
+            color: #FF385C;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: white;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 24px;
+        }
+
+        .comparison-table thead {
+            background: var(--anthropic-cream);
+        }
+
+        .comparison-table th {
+            padding: 16px;
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--anthropic-gray);
+            font-weight: 600;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+        .comparison-table td {
+            padding: 20px 16px;
+            border-bottom: 1px solid #F7F7F7;
+            font-size: 15px;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #FAFAFA;
+        }
+
+        .comparison-table strong {
+            font-weight: 600;
+            color: var(--anthropic-dark);
+        }
+
+        /* Voting Section */
+        .voting-section {
+            background: white;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 48px;
+            margin: 32px 0;
+        }
+
+        .voting-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .voting-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .voting-header p {
+            font-size: 18px;
+            color: var(--anthropic-gray);
+        }
+
+        /* Form Inputs */
+        .form-group {
+            margin-bottom: 32px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .name-input,
+        input[type="date"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #DDDDDD;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .name-input:focus,
+        input[type="date"]:focus {
+            outline: none;
+            border-color: var(--anthropic-dark);
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+
+        .date-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Vote Type Selector */
+        .vote-type-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 4px;
+            background: var(--anthropic-cream);
+            border-radius: 8px;
+        }
+
+        .vote-type-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--anthropic-gray);
+            transition: all 0.2s ease;
+        }
+
+        .vote-type-btn.active {
+            background: white;
+            color: var(--anthropic-dark);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        }
+
+        /* Vote Cards Grid */
+        .vote-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .vote-card {
+            background: white;
+            border: 2px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .vote-card:hover {
+            border-color: var(--anthropic-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .vote-card.selected {
+            border-color: var(--anthropic-orange);
+            background: rgba(233, 116, 81, 0.05);
+        }
+
+        .vote-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 16px;
+        }
+
+        .vote-count {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--anthropic-dark);
+            margin: 12px 0;
+        }
+
+        .vote-bar {
+            background: #F0F0F0;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .vote-bar-fill {
+            background: var(--anthropic-orange);
+            height: 100%;
+            transition: width 0.6s ease;
+        }
+
+        .vote-button {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--anthropic-dark);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .vote-button:hover {
+            background: #000000;
+            transform: translateY(-1px);
+        }
+
+        .vote-button:disabled {
+            background: #DDDDDD;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Recommendation Section */
+        .recommendation-box {
+            background: var(--anthropic-cream);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .recommendation-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 16px;
+        }
+
+        .top-picks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .pick-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--anthropic-orange);
+        }
+
+        .pick-item strong {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+        }
+
+        .pick-item div {
+            font-size: 14px;
+            color: var(--anthropic-gray);
+            margin-top: 4px;
+        }
+
+        /* Voters List */
+        .voters-list {
+            background: var(--anthropic-cream);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        .voters-list h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 16px;
+        }
+
+        .voter-item {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .voter-item strong {
+            font-weight: 600;
+            color: var(--anthropic-dark);
+        }
+
+        /* Alert/Info Boxes */
+        .info-box {
+            background: #FFF9E6;
+            border: 1px solid #FFE066;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .info-box strong {
+            color: var(--anthropic-dark);
+        }
+
+        .success-box {
+            background: #E6F7F5;
+            border-color: #00A699;
+        }
+
+        .warning-box {
+            background: #FFE7E7;
+            border-color: #FF385C;
+        }
+
+        /* Itinerary */
+        .itinerary-day {
+            background: white;
+            border: 1px solid #EBEBEB;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .itinerary-day:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .itinerary-day h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 12px;
+        }
+
+        .itinerary-day p {
+            font-size: 15px;
+            color: var(--anthropic-gray);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .tabs {
+                flex-wrap: nowrap;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                flex-wrap: wrap;
+            }
+
+            .date-inputs {
+                grid-template-columns: 1fr;
+            }
+
+            .destination-hero {
+                height: 280px;
+            }
+
+            .voting-section {
+                padding: 24px;
+            }
+        }
+
+        /* Highlight/Feature Badge */
+        .feature-badge {
+            display: inline-block;
+            background: var(--anthropic-orange);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+        }
+
+        /* Stars */
+        .stars {
+            color: #FFB400;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        Adventure<span class="logo-accent">2026</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Plan Your Ultimate Boys Trip</h1>
+            <p class="subtitle">Compare destinations, vote on your favorite, and find dates that work for everyone</p>
+            
+            <div class="trip-details">
+                <div class="detail-item">
+                    <span class="detail-icon">👥</span>
+                    <div class="detail-content">
+                        <strong>Group Size</strong>
+                        <span>8 people</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <div class="detail-content">
+                        <strong>Duration</strong>
+                        <span>5-7 days</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🗓️</span>
+                    <div class="detail-content">
+                        <strong>Timing</strong>
+                        <span>After May 2026</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🎯</span>
+                    <div class="detail-content">
+                        <strong>Focus</strong>
+                        <span>Adventure Activities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('comparison')">📊 Compare All</button>
+            <button class="tab-button" onclick="showTab('queenstown')">🇳🇿 Queenstown</button>
+            <button class="tab-button" onclick="showTab('scotland')">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</button>
+            <button class="tab-button" onclick="showTab('interlaken')">🇨🇭 Interlaken</button>
+            <button class="tab-button" onclick="showTab('moab')">🇺🇸 Moab</button>
+            <button class="tab-button" onclick="showTab('whistler')">🇨🇦 Whistler</button>
+            <button class="tab-button" onclick="showTab('cairns')">🇦🇺 Cairns</button>
+            <button class="tab-button" onclick="showTab('vote')">🗳️ VOTE NOW</button>
+        </div>
+
+        <!-- Comparison Tab -->
+        <div id="comparison" class="destination-card active">
+            <div class="comparison-section">
+                <h2 style="color: #667eea; text-align: center; margin-bottom: 20px;">Destination Comparison</h2>
+                
+                <div class="highlight-box">
+                    <strong>🏆 Top 3 Recommendations:</strong>
+                    <ol style="margin-top: 10px;">
+                        <li><strong>Queenstown, NZ</strong> - Most comprehensive adventure activities</li>
+                        <li><strong>Scotland</strong> - Best value + unique cultural experience</li>
+                        <li><strong>Moab, Utah</strong> - Most affordable + easiest logistics</li>
+                    </ol>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Budget/Person</th>
+                            <th>Adventure Level</th>
+                            <th>Culture</th>
+                            <th>Value</th>
+                            <th>Key Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🇳🇿 Queenstown</strong></td>
+                            <td>$2,550-$3,550</td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐</span></td>
+                            <td>Bungy, Skydiving, Jet Boating, Rafting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</strong></td>
+                            <td>$2,200-$3,400</td>
+                            <td><span class="stars">⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                            <td>Munro Bagging, Coasteering, Whisky Tours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇨🇭 Interlaken</strong></td>
+                            <td>$3,500-$5,500</td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐</span></td>
+                            <td>Paragliding, Canyoning, Alpine Sports</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇺🇸 Moab</strong></td>
+                            <td>$1,800-$2,800</td>
+                            <td><span class="stars">⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span></td>
+                            <td>Mountain Biking, Canyoneering, Off-Roading</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇨🇦 Whistler</strong></td>
+                            <td>$2,200-$3,500</td>
+                            <td><span class="stars">⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐</span></td>
+                            <td>Mountain Biking, Ziplining, ATV Tours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇦🇺 Cairns</strong></td>
+                            <td>$2,800-$4,200</td>
+                            <td><span class="stars">⭐⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐</span></td>
+                            <td><span class="stars">⭐⭐⭐</span></td>
+                            <td>Scuba Diving, Skydiving, Jungle Adventures</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Queenstown -->
+        <div id="queenstown" class="destination-card">
+            <div class="destination-hero">
+                <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=1200&h=600&fit=crop" alt="Queenstown New Zealand">
+                <div class="hero-badge">$2,550-$3,550 per person</div>
+            </div>
+
+            <div class="destination-header">
+                <div>
+                    <h2 class="destination-title">🇳🇿 Queenstown, New Zealand</h2>
+                    <p class="destination-subtitle">The Adventure Capital of the World<span class="feature-badge">Top Pick</span></p>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">Nov-Mar</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Flight Time</div>
+                    <div class="stat-value">~15hrs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value"><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$20K-$28K</div>
+                </div>
+            </div>
+
+            <div class="info-box success-box">
+                <span>⭐</span>
+                <div><strong>Expert Pick #1:</strong> Purpose-built for adrenaline junkies with world-class infrastructure and the most comprehensive adventure activities.</div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Bungy Jumping</h4>
+                        <p>Original AJ Hackett site + 134m Nevis Bungy - highest in NZ</p>
+                        <div class="activity-price">$205-$275</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Skydiving</h4>
+                        <p>15,000ft tandem jumps over stunning Lake Wakatipu</p>
+                        <div class="activity-price">$299-$399</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Jet Boating</h4>
+                        <p>Shotover Jet - 360° spins through narrow canyons at 85km/h</p>
+                        <div class="activity-price">$159</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>Grade 3-5 rapids on Shotover River</p>
+                        <div class="activity-price">$229</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Mountain Biking</h4>
+                        <p>World-renowned trails at Queenstown Bike Park</p>
+                        <div class="activity-price">$99</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Canyoning</h4>
+                        <p>Abseil waterfalls and navigate gorges</p>
+                        <div class="activity-price">$269</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">What to Know</h3>
+                <div class="pros-cons">
+                    <div class="pros-cons-card pros">
+                        <h4><span>✓</span> Pros</h4>
+                        <ul>
+                            <li>Most activities concentrated in one area</li>
+                            <li>World-class adventure infrastructure</li>
+                            <li>Stunning scenery everywhere</li>
+                            <li>English-speaking, easy logistics</li>
+                            <li>Great nightlife and food scene</li>
+                        </ul>
+                    </div>
+                    <div class="pros-cons-card cons">
+                        <h4><span>✕</span> Cons</h4>
+                        <ul>
+                            <li>Long flight (15+ hours)</li>
+                            <li>Expensive compared to some options</li>
+                            <li>Limited cultural experiences</li>
+                            <li>Can be touristy in peak season</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Sample 6-Day Itinerary</h3>
+                <div class="itinerary-day">
+                    <h4>Day 1: Arrival & Fergburger</h4>
+                    <p>Arrive, settle in, legendary burgers, explore town, drinks at World Bar</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 2: Sky High Adrenaline</h4>
+                    <p>Skydiving 15,000ft + Luge at Skyline + Bar crawl</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 3: Water & Wheels</h4>
+                    <p>Shotover Jet + Nevis/Kawarau Bungy + Mountain Biking</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 4: White Water</h4>
+                    <p>Full-day rafting Shotover River (Grade 3-5) + Evening pub quiz</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 5: Canyoning</h4>
+                    <p>Full-day canyoning adventure + Whisky tasting + Night out</p>
+                </div>
+                <div class="itinerary-day">
+                    <h4>Day 6: Canyon Swing & Farewell</h4>
+                    <p>Choose final adventure + Farewell dinner at Rata</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scotland -->
+        <div id="scotland" class="destination-card">
+            <div class="destination-hero">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&h=600&fit=crop" alt="Scotland Highlands">
+                <div class="hero-badge">$2,200-$3,400 per person</div>
+            </div>
+
+            <div class="destination-header">
+                <div>
+                    <h2 class="destination-title">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland (Highlands & Islands)</h2>
+                    <p class="destination-subtitle">Rugged wilderness meets world-class whisky<span class="feature-badge">Best Value</span></p>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">May-Sep</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Flight Time</div>
+                    <div class="stat-value">~7-9hrs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value"><span class="stars">⭐⭐⭐⭐</span></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$18K-$27K</div>
+                </div>
+            </div>
+
+            <div class="info-box success-box">
+                <span>⭐</span>
+                <div><strong>Expert Pick #2:</strong> Best value destination with perfect balance of adventure + culture. Many FREE activities!</div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Munro Bagging</h4>
+                        <p>Summit Ben Nevis (UK's highest peak) or easier Cairngorms peaks</p>
+                        <div class="activity-price">FREE-$80</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Coasteering</h4>
+                        <p>Cliff jumping, swimming, scrambling on dramatic Scottish coastline</p>
+                        <div class="activity-price">$90-$120</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>River Tay Grade 3-4 rapids through beautiful Perthshire</p>
+                        <div class="activity-price">$85-$120</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Mountain Biking</h4>
+                        <p>World-class trails at Fort William and Isle of Skye</p>
+                        <div class="activity-price">$60-$90</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Canyoning</h4>
+                        <p>Descend Scottish gorges with waterfalls and natural slides</p>
+                        <div class="activity-price">$95-$130</div>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Whisky Distillery Tours</h4>
+                        <p>Visit Talisker (Skye) or Ben Nevis distilleries</p>
+                        <div class="activity-price">$25-$35</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">What to Know</h3>
+                <div class="pros-cons">
+                    <div class="pros-cons-card pros">
+                        <h4><span>✓</span> Pros</h4>
+                        <ul>
+                            <li>BEST VALUE - Most affordable option</li>
+                            <li>Rich culture: castles, history, whisky</li>
+                            <li>Stunning Highland landscapes</li>
+                            <li>English-speaking, easy to navigate</li>
+                            <li>Amazing pub culture for group bonding</li>
+                            <li>Many FREE activities (hiking, wild swimming)</li>
+                        </ul>
+                    </div>
+                    <div class="pros-cons-card cons">
+                        <h4><span>✕</span> Cons</h4>
+                        <ul>
+                            <li>Weather unpredictable (bring rain gear!)</li>
+                            <li>Midges in summer (June-Aug)</li>
+                            <li>Left-side driving adjustment needed</li>
+                            <li>Slightly less extreme than Queenstown</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interlaken -->
+        <div id="interlaken" class="destination-card">
+            <div class="destination-header">
+                <h2 class="destination-title">🇨🇭 Interlaken, Switzerland</h2>
+                <span class="budget-badge">$3,500-$5,500 per person</span>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Premium Option:</strong> Swiss Alps adventure with world-class efficiency. Most expensive but incredible quality.
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">Jun-Sep</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Flight Time</div>
+                    <div class="stat-value">~9-11hrs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$28K-$44K</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎯 Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Paragliding</h4>
+                        <p>Tandem flights from mountaintops with stunning Alpine views</p>
+                        <strong>$150-$250</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Canyoning</h4>
+                        <p>Navigate waterfalls, natural slides, emerald pools</p>
+                        <strong>$120-$180</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Skydiving</h4>
+                        <p>Jump over the Swiss Alps and Interlaken</p>
+                        <strong>$350-$450</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Mountain Biking</h4>
+                        <p>Extensive trail network from Harder Kulm</p>
+                        <strong>$80-$120</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Via Ferrata</h4>
+                        <p>Secured climbing routes on mountain faces</p>
+                        <strong>$100-$150</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>Lütschine and Simme rivers</p>
+                        <strong>$90-$140</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Unmatched Alpine scenery</li>
+                            <li>Swiss efficiency and quality</li>
+                            <li>Extreme adventure activities</li>
+                            <li>Excellent public transportation</li>
+                            <li>Very safe and organized</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Most expensive destination</li>
+                            <li>High food/drink costs</li>
+                            <li>Can feel corporate/touristy</li>
+                            <li>Limited nightlife compared to others</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moab -->
+        <div id="moab" class="destination-card">
+            <div class="destination-header">
+                <h2 class="destination-title">🇺🇸 Moab, Utah</h2>
+                <span class="budget-badge">$1,800-$2,800 per person</span>
+            </div>
+
+            <div class="highlight-box">
+                <strong>⭐ Expert Pick #3:</strong> America's adventure playground - best value and easiest logistics for US-based groups!
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">Mar-May, Sep-Nov</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Drive from SLC</div>
+                    <div class="stat-value">4 hours</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value">⭐⭐⭐⭐</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$14K-$22K</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎯 Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Mountain Biking</h4>
+                        <p>Legendary Slickrock Trail and Whole Enchilada</p>
+                        <strong>$50-$100</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Canyoneering</h4>
+                        <p>Rappel through stunning slot canyons</p>
+                        <strong>$150-$250</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>Colorado River through Cataract Canyon</p>
+                        <strong>$200-$400</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Off-Road UTV Tours</h4>
+                        <p>Hell's Revenge, Poison Spider Mesa</p>
+                        <strong>$150-$250</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Rock Climbing</h4>
+                        <p>Fisher Towers, Wall Street, Castle Valley</p>
+                        <strong>$100-$200</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>National Parks</h4>
+                        <p>Arches and Canyonlands - epic hiking</p>
+                        <strong>FREE</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>MOST AFFORDABLE destination</li>
+                            <li>Easy logistics from US</li>
+                            <li>Unique red rock landscapes</li>
+                            <li>World-class mountain biking</li>
+                            <li>No language barrier</li>
+                            <li>Great value for money</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Limited cultural experiences</li>
+                            <li>Can be extremely hot in summer</li>
+                            <li>Small town - limited nightlife</li>
+                            <li>Less extreme than Queenstown</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Whistler -->
+        <div id="whistler" class="destination-card">
+            <div class="destination-header">
+                <h2 class="destination-title">🇨🇦 Whistler, British Columbia</h2>
+                <span class="budget-badge">$2,200-$3,500 per person</span>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Year-Round Hub:</strong> Premier mountain resort with excellent infrastructure and vibrant village atmosphere.
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">Jun-Sep</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">From Vancouver</div>
+                    <div class="stat-value">2 hours</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value">⭐⭐⭐⭐</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$18K-$28K</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎯 Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Mountain Biking</h4>
+                        <p>Whistler Bike Park - North America's premier lift-accessed park</p>
+                        <strong>$100-$150</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Ziplining</h4>
+                        <p>Superfly Ziplines through old-growth forest</p>
+                        <strong>$120-$180</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>ATV Tours</h4>
+                        <p>Backcountry wilderness exploration</p>
+                        <strong>$150-$200</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>Elaho-Squamish or Green River</p>
+                        <strong>$100-$150</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Via Ferrata</h4>
+                        <p>The Peak at Whistler Mountain</p>
+                        <strong>$120-$160</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Bungee Jumping</h4>
+                        <p>160ft jump at Whistler Bungee</p>
+                        <strong>$140-$180</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Easy access from major US cities</li>
+                            <li>World-class bike park</li>
+                            <li>Great village nightlife</li>
+                            <li>English-speaking</li>
+                            <li>Year-round activities</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Can be expensive</li>
+                            <li>Very touristy/resort feel</li>
+                            <li>Similar to US resorts</li>
+                            <li>Less unique culturally</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cairns -->
+        <div id="cairns" class="destination-card">
+            <div class="destination-header">
+                <h2 class="destination-title">🇦🇺 Cairns, Australia</h2>
+                <span class="budget-badge">$2,800-$4,200 per person</span>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Reef & Rainforest:</strong> Unique combo of Great Barrier Reef diving and tropical rainforest adventures.
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value">Jun-Oct</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Flight Time</div>
+                    <div class="stat-value">~15-17hrs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Adventure Level</div>
+                    <div class="stat-value">⭐⭐⭐⭐</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Group Total</div>
+                    <div class="stat-value">$22K-$34K</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎯 Top Activities</h3>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>Scuba Diving</h4>
+                        <p>Great Barrier Reef - multi-day liveaboard options</p>
+                        <strong>$200-$400</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Skydiving</h4>
+                        <p>Beach landing jumps with reef views</p>
+                        <strong>$250-$350</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>White Water Rafting</h4>
+                        <p>Tully River Grade 3-4 rapids</p>
+                        <strong>$150-$200</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Bungy Jumping</h4>
+                        <p>AJ Hackett Cairns Tower</p>
+                        <strong>$180-$230</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Jungle Ziplines</h4>
+                        <p>Through Daintree Rainforest canopy</p>
+                        <strong>$100-$150</strong>
+                    </div>
+                    <div class="activity-card">
+                        <h4>Shark Diving</h4>
+                        <p>Cage diving with reef sharks</p>
+                        <strong>$200-$300</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✓ Pros</h4>
+                        <ul>
+                            <li>Unique reef diving experience</li>
+                            <li>Warm tropical climate</li>
+                            <li>Diverse activities (reef + rainforest)</li>
+                            <li>English-speaking</li>
+                            <li>Great nightlife</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>✗ Cons</h4>
+                        <ul>
+                            <li>Very long flight</li>
+                            <li>Expensive destination</li>
+                            <li>Dangerous wildlife (crocs, jellyfish)</li>
+                            <li>Less land-based adventure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voting Section -->
+        <div id="vote" class="destination-card">
+            <div class="voting-section">
+                <div class="voting-header">
+                    <h2>Cast Your Vote</h2>
+                    <p>Help us decide where to go and when everyone's available</p>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" id="voterName" class="name-input" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">When are you available? (after May 2026)</label>
+                    <div class="date-inputs">
+                        <div>
+                            <input type="date" id="startDate" min="2026-05-01">
+                        </div>
+                        <div>
+                            <input type="date" id="endDate" min="2026-05-01">
+                        </div>
+                    </div>
+                    <div id="dateWarning" style="display: none; margin-top: 12px;" class="info-box">
+                        <span>⚠️</span>
+                        <div><strong>Note:</strong> <span id="dateWarningText"></span></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Choose Your Vote</label>
+                    <div class="vote-type-selector">
+                        <button class="vote-type-btn active" id="btnSpecific" onclick="showVoteType('specific')">
+                            Choose Destination
+                        </button>
+                        <button class="vote-type-btn" id="btnRecommendation" onclick="showVoteType('recommendation')">
+                            Trust Expert Picks
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="specificVoteSection">
+                    <div class="vote-options" id="voteOptions">
+                        <!-- Vote cards will be generated here -->
+                    </div>
+                </div>
+
+                <div id="recommendationVoteSection" style="display: none;">
+                    <div class="recommendation-box">
+                        <h3>🏆 Trust the Expert Recommendations</h3>
+                        <p style="color: var(--anthropic-gray); margin-bottom: 24px;">Not sure which to pick? Our travel expert has ranked destinations by adventure, value, and accessibility.</p>
+                        
+                        <div class="top-picks">
+                            <div class="pick-item">
+                                <strong>🥇 #1 Queenstown, NZ</strong>
+                                <div>Most comprehensive adventure activities & best infrastructure</div>
+                            </div>
+                            <div class="pick-item">
+                                <strong>🥈 #2 Scotland</strong>
+                                <div>Best value + unique cultural experience</div>
+                            </div>
+                            <div class="pick-item">
+                                <strong>🥉 #3 Moab, Utah</strong>
+                                <div>Most affordable + easiest logistics for US-based groups</div>
+                            </div>
+                        </div>
+                        
+                        <button class="vote-button" onclick="castRecommendationVote()">
+                            Vote for Expert Recommendations
+                        </button>
+                    </div>
+                </div>
+
+                <div class="voters-list" id="votersList" style="display: none;">
+                    <h4>Who's Voted</h4>
+                    <div id="votersContent"></div>
+                </div>
+
+                <div class="voters-list" id="dateSummary" style="display: none;">
+                    <h4>📅 Date Availability Overview</h4>
+                    <div id="dateSummaryContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const destinations = [
+            { id: 'queenstown', name: 'Queenstown, NZ 🇳🇿', emoji: '🇳🇿' },
+            { id: 'scotland', name: 'Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿', emoji: '🏴󠁧󠁢󠁳󠁣󠁴󠁿' },
+            { id: 'interlaken', name: 'Interlaken 🇨🇭', emoji: '🇨🇭' },
+            { id: 'moab', name: 'Moab 🇺🇸', emoji: '🇺🇸' },
+            { id: 'whistler', name: 'Whistler 🇨🇦', emoji: '🇨🇦' },
+            { id: 'cairns', name: 'Cairns 🇦🇺', emoji: '🇦🇺' }
+        ];
+
+        let votes = JSON.parse(localStorage.getItem('tripVotes')) || {};
+        let voters = JSON.parse(localStorage.getItem('tripVoters')) || [];
+        let selectedDestination = null;
+        let currentVoteType = 'specific';
+
+        function showVoteType(type) {
+            currentVoteType = type;
+            const btnSpecific = document.getElementById('btnSpecific');
+            const btnRecommendation = document.getElementById('btnRecommendation');
+            const specificSection = document.getElementById('specificVoteSection');
+            const recommendationSection = document.getElementById('recommendationVoteSection');
+            const description = document.getElementById('voteTypeDescription');
+
+            if (type === 'specific') {
+                btnSpecific.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                btnSpecific.style.color = 'white';
+                btnRecommendation.style.background = 'white';
+                btnRecommendation.style.color = '#667eea';
+                specificSection.style.display = 'block';
+                recommendationSection.style.display = 'none';
+                description.innerHTML = '<strong>Choose Destination:</strong> Vote for a specific location from the options below';
+            } else {
+                btnSpecific.style.background = 'white';
+                btnSpecific.style.color = '#667eea';
+                btnRecommendation.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                btnRecommendation.style.color = 'white';
+                specificSection.style.display = 'none';
+                recommendationSection.style.display = 'block';
+                description.innerHTML = '<strong>Trust Recommendations:</strong> Support going with one of the expert-recommended top 3 destinations';
+            }
+        }
+
+        // Add date validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const startDate = document.getElementById('startDate');
+            const endDate = document.getElementById('endDate');
+            const dateWarning = document.getElementById('dateWarning');
+            const dateWarningText = document.getElementById('dateWarningText');
+
+            function validateDates() {
+                if (startDate.value && endDate.value) {
+                    const start = new Date(startDate.value);
+                    const end = new Date(endDate.value);
+                    const diffTime = Math.abs(end - start);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                    if (end <= start) {
+                        dateWarning.style.display = 'block';
+                        dateWarning.style.background = '#f8d7da';
+                        dateWarning.style.borderColor = '#dc3545';
+                        dateWarningText.textContent = 'End date must be after start date!';
+                        return false;
+                    } else if (diffDays < 5) {
+                        dateWarning.style.display = 'block';
+                        dateWarning.style.background = '#fff3cd';
+                        dateWarning.style.borderColor = '#ffc107';
+                        dateWarningText.textContent = `That's only ${diffDays} days. Most itineraries are 5-7 days.`;
+                        return true;
+                    } else if (diffDays > 7) {
+                        dateWarning.style.display = 'block';
+                        dateWarning.style.background = '#d1ecf1';
+                        dateWarning.style.borderColor = '#17a2b8';
+                        dateWarningText.textContent = `That's ${diffDays} days - great! You'll have time for extra activities.`;
+                        return true;
+                    } else {
+                        dateWarning.style.display = 'block';
+                        dateWarning.style.background = '#d4edda';
+                        dateWarning.style.borderColor = '#28a745';
+                        dateWarningText.textContent = `Perfect! ${diffDays} days fits our planned itineraries.`;
+                        return true;
+                    }
+                }
+                dateWarning.style.display = 'none';
+                return true;
+            }
+
+            startDate.addEventListener('change', function() {
+                if (this.value) {
+                    endDate.min = this.value;
+                }
+                validateDates();
+            });
+
+            endDate.addEventListener('change', validateDates);
+        });
+
+        function showTab(tabName) {
+            // Hide all cards
+            const cards = document.querySelectorAll('.destination-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Remove active from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected card
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activate clicked button
+            event.target.classList.add('active');
+            
+            // If voting tab, render vote cards
+            if (tabName === 'vote') {
+                renderVoteCards();
+                renderVotersList();
+                renderDateSummary();
+            }
+        }
+
+        function renderVoteCards() {
+            const container = document.getElementById('voteOptions');
+            container.innerHTML = '';
+            
+            destinations.forEach(dest => {
+                const voteCount = votes[dest.id] || 0;
+                const totalVotes = Object.values(votes).reduce((a, b) => a + b, 0);
+                const percentage = totalVotes > 0 ? (voteCount / totalVotes * 100) : 0;
+                
+                const card = document.createElement('div');
+                card.className = 'vote-card';
+                card.id = `vote-${dest.id}`;
+                card.innerHTML = `
+                    <h3>${dest.name}</h3>
+                    <div class="vote-count">${voteCount} vote${voteCount !== 1 ? 's' : ''}</div>
+                    <div class="vote-bar">
+                        <div class="vote-bar-fill" style="width: ${percentage}%"></div>
+                    </div>
+                    <button class="vote-button" onclick="castVote('${dest.id}')">Vote for this!</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function calculateDays(startDate, endDate) {
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            const diffTime = Math.abs(end - start);
+            return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        }
+
+        function castRecommendationVote() {
+            const voterName = document.getElementById('voterName').value.trim();
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            if (!voterName) {
+                alert('Please enter your name before voting!');
+                return;
+            }
+
+            if (!startDate || !endDate) {
+                alert('Please select your available date range!');
+                return;
+            }
+
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+
+            if (end <= start) {
+                alert('End date must be after start date!');
+                return;
+            }
+
+            const days = calculateDays(startDate, endDate);
+            
+            // Check if this person already voted
+            const existingVoter = voters.find(v => v.name.toLowerCase() === voterName.toLowerCase());
+            
+            if (existingVoter) {
+                const confirmChange = confirm(`You already voted for ${existingVoter.destination} (${formatDate(existingVoter.startDate)} - ${formatDate(existingVoter.endDate)}). Do you want to change your vote?`);
+                if (!confirmChange) return;
+                
+                // Remove old vote
+                if (existingVoter.destinationId !== 'recommendation') {
+                    votes[existingVoter.destinationId] = (votes[existingVoter.destinationId] || 1) - 1;
+                } else {
+                    votes['recommendation'] = (votes['recommendation'] || 1) - 1;
+                }
+                voters = voters.filter(v => v.name.toLowerCase() !== voterName.toLowerCase());
+            }
+            
+            // Add new vote
+            votes['recommendation'] = (votes['recommendation'] || 0) + 1;
+            
+            voters.push({
+                name: voterName,
+                destination: 'Expert Recommendations (Top 3)',
+                destinationId: 'recommendation',
+                startDate: startDate,
+                endDate: endDate,
+                days: days,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('tripVotes', JSON.stringify(votes));
+            localStorage.setItem('tripVoters', JSON.stringify(voters));
+            
+            // Re-render
+            renderVoteCards();
+            renderVotersList();
+            renderDateSummary();
+            
+            // Clear inputs
+            document.getElementById('voterName').value = '';
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('dateWarning').style.display = 'none';
+            
+            // Show success message
+            alert(`Thanks ${voterName}! Your vote for Expert Recommendations (${formatDate(startDate)} - ${formatDate(endDate)}, ${days} days) has been recorded!`);
+        }
+
+        function castVote(destinationId) {
+            const voterName = document.getElementById('voterName').value.trim();
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            if (!voterName) {
+                alert('Please enter your name before voting!');
+                return;
+            }
+
+            if (!startDate || !endDate) {
+                alert('Please select your available date range!');
+                return;
+            }
+
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+
+            if (end <= start) {
+                alert('End date must be after start date!');
+                return;
+            }
+
+            const days = calculateDays(startDate, endDate);
+            
+            // Check if this person already voted
+            const existingVoter = voters.find(v => v.name.toLowerCase() === voterName.toLowerCase());
+            
+            if (existingVoter) {
+                const confirmChange = confirm(`You already voted for ${existingVoter.destination} (${formatDate(existingVoter.startDate)} - ${formatDate(existingVoter.endDate)}). Do you want to change your vote?`);
+                if (!confirmChange) return;
+                
+                // Remove old vote
+                if (existingVoter.destinationId !== 'recommendation') {
+                    votes[existingVoter.destinationId] = (votes[existingVoter.destinationId] || 1) - 1;
+                } else {
+                    votes['recommendation'] = (votes['recommendation'] || 1) - 1;
+                }
+                voters = voters.filter(v => v.name.toLowerCase() !== voterName.toLowerCase());
+            }
+            
+            // Add new vote
+            votes[destinationId] = (votes[destinationId] || 0) + 1;
+            
+            const destination = destinations.find(d => d.id === destinationId);
+            voters.push({
+                name: voterName,
+                destination: destination.name,
+                destinationId: destinationId,
+                startDate: startDate,
+                endDate: endDate,
+                days: days,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('tripVotes', JSON.stringify(votes));
+            localStorage.setItem('tripVoters', JSON.stringify(voters));
+            
+            // Re-render
+            renderVoteCards();
+            renderVotersList();
+            renderDateSummary();
+            
+            // Clear inputs
+            document.getElementById('voterName').value = '';
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('dateWarning').style.display = 'none';
+            
+            // Show success message
+            alert(`Thanks ${voterName}! Your vote for ${destination.name} (${formatDate(startDate)} - ${formatDate(endDate)}, ${days} days) has been recorded!`);
+        }
+
+        function renderVotersList() {
+            if (voters.length === 0) {
+                document.getElementById('votersList').style.display = 'none';
+                return;
+            }
+            
+            document.getElementById('votersList').style.display = 'block';
+            const content = document.getElementById('votersContent');
+            
+            // Separate recommendation votes from specific votes
+            const recommendationVotes = voters.filter(v => v.destinationId === 'recommendation');
+            const specificVotes = voters.filter(v => v.destinationId !== 'recommendation');
+            
+            let html = '';
+            
+            if (specificVotes.length > 0) {
+                html += '<h4 style="color: #764ba2; margin: 15px 0 10px 0;">Specific Destination Votes:</h4>';
+                html += specificVotes.map(v => `
+                    <div class="voter-item">
+                        <strong>${v.name}</strong> voted for ${v.destination} 
+                        <span style="color: #667eea;">(${formatDate(v.startDate)} - ${formatDate(v.endDate)}, ${v.days} days)</span>
+                    </div>
+                `).join('');
+            }
+            
+            if (recommendationVotes.length > 0) {
+                html += '<h4 style="color: #764ba2; margin: 15px 0 10px 0;">Expert Recommendation Votes:</h4>';
+                html += recommendationVotes.map(v => `
+                    <div class="voter-item" style="background: #fff3cd;">
+                        <strong>${v.name}</strong> voted for ${v.destination} 
+                        <span style="color: #667eea;">(${formatDate(v.startDate)} - ${formatDate(v.endDate)}, ${v.days} days)</span>
+                    </div>
+                `).join('');
+            }
+            
+            content.innerHTML = html;
+        }
+
+        function renderDateSummary() {
+            if (voters.length === 0) {
+                document.getElementById('dateSummary').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('dateSummary').style.display = 'block';
+            const content = document.getElementById('dateSummaryContent');
+
+            // Find overlapping dates
+            const allDates = [];
+            voters.forEach(v => {
+                const start = new Date(v.startDate);
+                const end = new Date(v.endDate);
+                allDates.push({ name: v.name, start, end });
+            });
+
+            // Find the best overlap
+            let bestOverlap = null;
+            let maxPeople = 0;
+
+            if (allDates.length >= 2) {
+                // Check all possible date ranges
+                const allStartDates = allDates.map(d => d.start.getTime()).sort((a, b) => a - b);
+                const allEndDates = allDates.map(d => d.end.getTime()).sort((a, b) => a - b);
+
+                for (let startTime of allStartDates) {
+                    for (let endTime of allEndDates) {
+                        if (endTime > startTime) {
+                            const peopleAvailable = allDates.filter(d => 
+                                d.start.getTime() <= startTime && d.end.getTime() >= endTime
+                            );
+                            
+                            if (peopleAvailable.length > maxPeople) {
+                                maxPeople = peopleAvailable.length;
+                                bestOverlap = {
+                                    start: new Date(startTime),
+                                    end: new Date(endTime),
+                                    people: peopleAvailable
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+
+            let summaryHTML = `
+                <div style="display: grid; gap: 15px; margin-top: 10px;">
+            `;
+
+            // Add voting summary
+            const recommendationCount = votes['recommendation'] || 0;
+            const specificVotesCount = voters.length - recommendationCount;
+            
+            if (recommendationCount > 0) {
+                summaryHTML += `
+                    <div style="background: #fff3cd; padding: 20px; border-radius: 10px; border-left: 4px solid #ffc107;">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 10px;">
+                            🏆 Expert Recommendation Votes: ${recommendationCount}
+                        </div>
+                        <div style="color: #666;">
+                            ${recommendationCount} ${recommendationCount === 1 ? 'person trusts' : 'people trust'} the expert to pick from the Top 3 (Queenstown, Scotland, or Moab)
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (bestOverlap && maxPeople >= 2) {
+                const overlapDays = calculateDays(bestOverlap.start.toISOString().split('T')[0], bestOverlap.end.toISOString().split('T')[0]);
+                summaryHTML += `
+                    <div style="background: ${maxPeople === voters.length ? '#d4edda' : '#d1ecf1'}; padding: 20px; border-radius: 10px; border-left: 4px solid ${maxPeople === voters.length ? '#28a745' : '#17a2b8'};">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 10px;">
+                            ${maxPeople === voters.length ? '🎉 Perfect! Everyone is available:' : '📊 Best date overlap found:'}
+                        </div>
+                        <div style="font-size: 1.1em; color: #667eea; margin-bottom: 10px;">
+                            <strong>${formatDate(bestOverlap.start.toISOString().split('T')[0])} - ${formatDate(bestOverlap.end.toISOString().split('T')[0])}</strong>
+                            (${overlapDays} days)
+                        </div>
+                        <div style="color: #666;">
+                            Available: ${bestOverlap.people.map(p => p.name).join(', ')}
+                        </div>
+                        ${maxPeople < voters.length ? `
+                            <div style="margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.5); border-radius: 5px;">
+                                <strong>Note:</strong> ${voters.length - maxPeople} person(s) unavailable during this window
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            } else {
+                summaryHTML += `
+                    <div style="background: #f8d7da; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545;">
+                        <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 10px;">
+                            ⚠️ No overlapping dates found
+                        </div>
+                        <div style="color: #666;">
+                            The group needs to discuss dates - there's currently no window where everyone is available.
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Show individual availability
+            summaryHTML += `
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #764ba2; margin-bottom: 10px;">Individual Availability:</h4>
+                    ${voters.map(v => `
+                        <div style="padding: 8px; border-bottom: 1px solid #eee;">
+                            <strong>${v.name}:</strong> ${formatDate(v.startDate)} - ${formatDate(v.endDate)} (${v.days} days)
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            summaryHTML += `</div>`;
+            content.innerHTML = summaryHTML;
+        }
+
+        // Initialize vote cards on load
+        if (document.getElementById('vote').classList.contains('active')) {
+            renderVoteCards();
+            renderVotersList();
+            renderDateSummary();
+        }
+    </script>
+</body>
+</html>
